@@ -7,12 +7,12 @@ require("dotenv").config()
 const app = express();
 
 app.use(express.json())
-app.use(authentication)
-app.use("/user", userRouter)
-app.use("/post", postRoute)
 app.get("/", (req, res) => {
     res.send("hello world")
 })
+app.use(authentication)
+app.use("/user", userRouter)
+app.use("/post", postRoute)
 
 
 app.listen(process.env.port, async () => {
