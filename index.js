@@ -3,10 +3,12 @@ const connection = require('./config/db');
 const { userRouter } = require('./Routes/user.routes');
 const authentication = require('./middlewares/authenticate');
 const { postRoute } = require('./Routes/post.routes');
+const cors = require('cors');
 require("dotenv").config()
 const app = express();
 
 app.use(express.json())
+app.use(cors())
 app.get("/", (req, res) => {
     res.send("hello world")
 })
