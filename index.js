@@ -12,8 +12,8 @@ app.use(cors())
 app.get("/", (req, res) => {
     res.send({"msg":"hello world"})
 })
-app.use(authentication)
 app.use("/user", userRouter)
+app.use(authentication)
 app.use("/post", postRoute)
 
 
